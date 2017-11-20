@@ -23,7 +23,7 @@ class PaintingsList extends React.Component {
     });
 
     this.setState(state => {
-      return { paintings: updatedPaintings };
+      return Object.assign({}, state, { paintings: updatedPaintings.sort((a, b) => b.votes - a.votes) });
     });
   }
 
